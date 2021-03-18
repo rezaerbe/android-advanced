@@ -1,0 +1,109 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
+
+    defaultConfig {
+        applicationId "com.erbe.todoapp"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dataBinding {
+        enabled = true
+        enabledForTests = true
+    }
+    // Always show the result of every unit test when running via command line, even if it passes.
+    testOptions.unitTests {
+        includeAndroidResources = true
+        returnDefaultValues = true
+    }
+    packagingOptions {
+        exclude 'META-INF/AL2.0'
+        exclude 'win32-x86-64/attach_hotspot_windows.dll'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'win32-x86/attach_hotspot_windows.dll'
+        exclude 'META-INF/licenses/ASM'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation "androidx.fragment:fragment-ktx:1.3.0"
+
+    implementation "androidx.annotation:annotation:1.1.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2"
+    implementation "com.jakewharton.timber:timber:4.7.1"
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    implementation "androidx.test.espresso:espresso-idling-resource:3.3.0"
+    implementation "androidx.room:room-runtime:2.2.6"
+    kapt "androidx.room:room-compiler:2.2.6"
+
+    // Architecture Components
+    implementation "androidx.room:room-ktx:2.2.6"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    kapt "androidx.lifecycle:lifecycle-compiler:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+    // Dependencies for local unit tests
+    testImplementation "org.hamcrest:hamcrest-all:1.3"
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+    testImplementation "org.robolectric:robolectric:4.5.1"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2"
+
+    // Dependencies for Android instrumented unit tests
+    androidTestImplementation "junit:junit:4.*"
+    androidTestImplementation "org.mockito:mockito-core:3.3.1"
+    androidTestImplementation "com.linkedin.dexmaker:dexmaker-mockito:2.28.1"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2"
+
+    // Testing code should not be included in the main code.
+    // Once https://issuetracker.google.com/128612536 is fixed this can be fixed.
+    debugImplementation "androidx.fragment:fragment-testing:1.3.0"
+    implementation "androidx.test:core:1.3.0"
+
+    // AndroidX Test - JVM testing
+    testImplementation "androidx.test:core-ktx:1.3.0"
+    testImplementation "androidx.test.ext:junit:1.1.2"
+
+    // AndroidX Test - Instrumented testing
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:3.3.0"
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
+}

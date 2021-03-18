@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "454578020914",
+    "project_id": "codelabs-erbe",
+    "storage_bucket": "codelabs-erbe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454578020914:android:1633e7d48637b9a55f922b",
+        "android_client_info": {
+          "package_name": "com.erbe.kotlinlogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454578020914-070np2o9mi0jvl5rs4v318vetv2hnu7l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.erbe.kotlinlogin",
+            "certificate_hash": "6a0ae460ac96c7cb41458a47c7a99296fcd196fb"
+          }
+        },
+        {
+          "client_id": "454578020914-k6i0lv1elkt7lskqj040lg5l0o7mkcp7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDojMCYOjOoYbBWyLrLnCKMWnvq5giVmlc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454578020914-k6i0lv1elkt7lskqj040lg5l0o7mkcp7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
