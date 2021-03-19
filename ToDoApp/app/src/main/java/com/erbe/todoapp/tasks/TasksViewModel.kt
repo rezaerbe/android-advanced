@@ -215,7 +215,7 @@ class TasksViewModel(
 }
 
 @Suppress("UNCHECKED_CAST")
-class TasksViewModelFactory (
+class TasksViewModelFactory(
     private val tasksRepository: TasksRepository
 ) : ViewModelProvider.NewInstanceFactory() {
     override fun <T : ViewModel> create(modelClass: Class<T>) =

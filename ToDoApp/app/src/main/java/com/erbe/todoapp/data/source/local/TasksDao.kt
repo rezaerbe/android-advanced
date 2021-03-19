@@ -15,7 +15,7 @@ interface TasksDao {
      *
      * @return all tasks.
      */
-    @Query("SELECT * FROM tasks")
+    @Query("SELECT * FROM Tasks")
     fun observeTasks(): LiveData<List<Task>>
 
     /**
@@ -24,7 +24,7 @@ interface TasksDao {
      * @param taskId the task id.
      * @return the task with taskId.
      */
-    @Query("SELECT * FROM tasks WHERE entryid = :taskId")
+    @Query("SELECT * FROM Tasks WHERE entryid = :taskId")
     fun observeTaskById(taskId: String): LiveData<Task>
 
     /**
@@ -32,7 +32,7 @@ interface TasksDao {
      *
      * @return all tasks.
      */
-    @Query("SELECT * FROM tasks")
+    @Query("SELECT * FROM Tasks")
     suspend fun getTasks(): List<Task>
 
     /**
@@ -41,7 +41,7 @@ interface TasksDao {
      * @param taskId the task id.
      * @return the task with taskId.
      */
-    @Query("SELECT * FROM tasks WHERE entryid = :taskId")
+    @Query("SELECT * FROM Tasks WHERE entryid = :taskId")
     suspend fun getTaskById(taskId: String): Task?
 
     /**
@@ -75,13 +75,13 @@ interface TasksDao {
      *
      * @return the number of tasks deleted. This should always be 1.
      */
-    @Query("DELETE FROM tasks WHERE entryid = :taskId")
+    @Query("DELETE FROM Tasks WHERE entryid = :taskId")
     suspend fun deleteTaskById(taskId: String): Int
 
     /**
      * Delete all tasks.
      */
-    @Query("DELETE FROM tasks")
+    @Query("DELETE FROM Tasks")
     suspend fun deleteTasks()
 
     /**
@@ -89,6 +89,6 @@ interface TasksDao {
      *
      * @return the number of tasks deleted.
      */
-    @Query("DELETE FROM tasks WHERE completed = 1")
+    @Query("DELETE FROM Tasks WHERE completed = 1")
     suspend fun deleteCompletedTasks(): Int
 }

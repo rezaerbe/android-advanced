@@ -8,7 +8,7 @@ import com.erbe.todoapp.data.Result.Error
 import com.erbe.todoapp.data.Result.Success
 import com.erbe.todoapp.data.Task
 import kotlinx.coroutines.runBlocking
-import java.util.LinkedHashMap
+import java.util.*
 
 /**
  * Implementation of a remote data source with static access to the data for easy testing.

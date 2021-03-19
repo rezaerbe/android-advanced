@@ -1,7 +1,7 @@
 package com.erbe.kotlinnotification
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.erbe.kotlinnotification.ui.EggTimerFragment
 
 class MainActivity : AppCompatActivity() {

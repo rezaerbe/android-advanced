@@ -3,10 +3,7 @@ package com.erbe.todoapp.taskdetail
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.isChecked
-import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
-import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.espresso.matcher.ViewMatchers.withText
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.MediumTest
 import com.erbe.todoapp.R
@@ -44,7 +41,7 @@ class TaskDetailFragmentTest {
     }
 
     @Test
-    fun activeTaskDetails_DisplayedInUi() = runBlockingTest{
+    fun activeTaskDetails_DisplayedInUi() = runBlockingTest {
         // GIVEN - Add active (incomplete) task to the DB
         val activeTask = Task("Active Task", "AndroidX Rocks", false)
         repository.saveTask(activeTask)
@@ -65,7 +62,7 @@ class TaskDetailFragmentTest {
     }
 
     @Test
-    fun completedTaskDetails_DisplayedInUi() = runBlockingTest{
+    fun completedTaskDetails_DisplayedInUi() = runBlockingTest {
         // GIVEN - Add completed task to the DB
         val completedTask = Task("Completed Task", "AndroidX Rocks", true)
         repository.saveTask(completedTask)

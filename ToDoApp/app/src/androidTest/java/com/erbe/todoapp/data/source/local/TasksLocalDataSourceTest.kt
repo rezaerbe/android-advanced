@@ -92,5 +92,4 @@ class TasksLocalDataSourceTest {
         assertThat(result.data.title, `is`(newTask.title))
         assertThat(result.data.isCompleted, `is`(true))
     }
-
 }

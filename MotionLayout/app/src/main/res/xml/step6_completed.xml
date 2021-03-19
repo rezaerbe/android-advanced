@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Describe the animation for activity_step3.xml -->
-<MotionScene
-    xmlns:motion="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?><!-- Describe the animation for activity_step3.xml -->
+<MotionScene xmlns:motion="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- A transition describes an animation via start and end state -->

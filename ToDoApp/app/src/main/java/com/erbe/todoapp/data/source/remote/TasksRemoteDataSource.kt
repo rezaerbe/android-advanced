@@ -1,6 +1,5 @@
 package com.erbe.todoapp.data.source.remote
 
-import android.annotation.SuppressLint
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.map
@@ -27,9 +26,8 @@ object TasksRemoteDataSource : TasksDataSource {
 
     private val observableTasks = MutableLiveData<Result<List<Task>>>()
 
-    @SuppressLint("NullSafeMutableLiveData")
     override suspend fun refreshTasks() {
-        observableTasks.value = getTasks()
+        observableTasks.value = getTasks()!!
     }
 
     override suspend fun refreshTask(taskId: String) {
@@ -47,7 +45,7 @@ object TasksRemoteDataSource : TasksDataSource {
                 is Error -> Error(tasks.exception)
                 is Success -> {
                     val task = tasks.data.firstOrNull() { it.id == taskId }
-                            ?: return@map Error(Exception("Not found"))
+                        ?: return@map Error(Exception("Not found"))
                     Success(task)
                 }
             }

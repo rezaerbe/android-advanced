@@ -1,7 +1,9 @@
 package com.erbe.todoapp.tasks
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.erbe.todoapp.*
+import com.erbe.todoapp.Event
+import com.erbe.todoapp.MainCoroutineRule
+import com.erbe.todoapp.R
 import com.erbe.todoapp.data.Task
 import com.erbe.todoapp.data.source.FakeTestRepository
 import com.erbe.todoapp.getOrAwaitValue
@@ -79,7 +81,7 @@ class TasksViewModelTest {
         assertThat(tasksRepository.tasksServiceData[task.id]?.isCompleted, `is`(true))
 
         // The snackbar is updated
-        val snackbarText: Event<Int> =  tasksViewModel.snackbarText.getOrAwaitValue()
+        val snackbarText: Event<Int> = tasksViewModel.snackbarText.getOrAwaitValue()
         assertThat(snackbarText.getContentIfNotHandled(), `is`(R.string.task_marked_complete))
     }
 
@@ -96,7 +98,7 @@ class TasksViewModelTest {
         assertThat(tasksRepository.tasksServiceData[task.id]?.isActive, `is`(true))
 
         // The snackbar is updated
-        val snackbarText: Event<Int> =  tasksViewModel.snackbarText.getOrAwaitValue()
+        val snackbarText: Event<Int> = tasksViewModel.snackbarText.getOrAwaitValue()
         assertThat(snackbarText.getContentIfNotHandled(), `is`(R.string.task_marked_active))
     }
 }

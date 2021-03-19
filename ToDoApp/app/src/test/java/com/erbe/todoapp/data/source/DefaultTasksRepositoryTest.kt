@@ -7,7 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.hamcrest.core.IsEqual
-import org.junit.Assert.*
+import org.junit.Assert.assertThat
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -53,6 +53,4 @@ class DefaultTasksRepositoryTest {
         // Then tasks are loaded from the remote data source
         assertThat(tasks.data, IsEqual(remoteTasks))
     }
-
 }
-

@@ -7,6 +7,6 @@
         app:entries="@array/fact_type"
         app:entryValues="@array/fact_type"
         app:defaultValue="@string/fact_type_android"
-        app:useSimpleSummaryProvider="true"/>
+        app:useSimpleSummaryProvider="true" />
 
 </PreferenceScreen>

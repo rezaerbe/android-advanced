@@ -68,5 +68,4 @@ class FakeDataSource(var tasks: MutableList<Task>? = mutableListOf()) : TasksDat
     override suspend fun deleteTask(taskId: String) {
         tasks?.removeIf { it.id == taskId }
     }
-
 }

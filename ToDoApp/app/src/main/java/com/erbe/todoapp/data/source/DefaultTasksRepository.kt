@@ -13,7 +13,8 @@ import kotlinx.coroutines.*
 class DefaultTasksRepository(
     private val tasksRemoteDataSource: TasksDataSource,
     private val tasksLocalDataSource: TasksDataSource,
-    private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO) : TasksRepository {
+    private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
+) : TasksRepository {
 
     override suspend fun getTasks(forceUpdate: Boolean): Result<List<Task>> {
         wrapEspressoIdlingResource {

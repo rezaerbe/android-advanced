@@ -1,13 +1,14 @@
 package com.erbe.todoapp.data.source
 
 import androidx.lifecycle.LiveData
-import com.erbe.todoapp.data.Task
 import com.erbe.todoapp.data.Result
+import com.erbe.todoapp.data.Task
 
 /**
  * Main entry point for accessing tasks data.
  */
 interface TasksDataSource {
+
 
     fun observeTasks(): LiveData<Result<List<Task>>>
 

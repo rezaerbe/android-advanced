@@ -24,6 +24,7 @@ class StatisticsFragment : Fragment() {
             (requireContext().applicationContext as TodoApplication).taskRepository
         )
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

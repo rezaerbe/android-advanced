@@ -1,7 +1,6 @@
 package com.erbe.todoapp
 
 import android.app.Application
-import androidx.databinding.library.BuildConfig
 import com.erbe.todoapp.data.source.TasksRepository
 import timber.log.Timber
 import timber.log.Timber.DebugTree

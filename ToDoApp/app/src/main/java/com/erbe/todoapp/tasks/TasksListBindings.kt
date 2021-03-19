@@ -6,8 +6,6 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.erbe.todoapp.data.Task
 
-
-
 /**
  * [BindingAdapter]s for the [Task]s list.
  */

@@ -1,5 +1,6 @@
 package com.erbe.todoapp.util
 
+import androidx.test.espresso.IdlingResource
 import androidx.test.espresso.idling.CountingIdlingResource
 
 /**
@@ -26,10 +27,10 @@ object EspressoIdlingResource {
 inline fun <T> wrapEspressoIdlingResource(function: () -> T): T {
     // Espresso does not work well with coroutines yet. See
     // https://github.com/Kotlin/kotlinx.coroutines/issues/982
-    EspressoIdlingResource.increment() // Set app is busy.
+    EspressoIdlingResource.increment() // Set app as busy.
     return try {
         function()
     } finally {
-        EspressoIdlingResource.decrement() // Set app is idle.
+        EspressoIdlingResource.decrement() // Set app as idle.
     }
 }

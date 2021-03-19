@@ -8,7 +8,7 @@ import androidx.core.content.ContextCompat
 import com.erbe.kotlinnotification.R
 import com.erbe.kotlinnotification.util.sendNotification
 
-class AlarmReceiver: BroadcastReceiver() {
+class AlarmReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
         // TODO: Step 1.10 [Optional] remove toast
@@ -19,6 +19,9 @@ class AlarmReceiver: BroadcastReceiver() {
             context,
             NotificationManager::class.java
         ) as NotificationManager
-        notificationManager.sendNotification(context.getText(R.string.eggs_ready).toString(), context)
+        notificationManager.sendNotification(
+            context.getText(R.string.eggs_ready).toString(),
+            context
+        )
     }
 }
